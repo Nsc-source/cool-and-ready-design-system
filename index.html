@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool & Ready — Design System</title>
+  <link rel="stylesheet" href="Cool%20%26%20Ready%20Design%20System/colors_and_type.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font: var(--text-body);
+      line-height: 1.6;
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: var(--space-6); }
+    
+    header {
+      background: var(--primary);
+      color: var(--primary-fg);
+      padding: var(--space-12) var(--space-6);
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+    }
+    
+    header h1 { font: var(--text-h1); margin-bottom: var(--space-4); }
+    header p { font: var(--text-body-lg); opacity: 0.95; }
+    
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-4) 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      padding: 0 var(--space-6);
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-md);
+      transition: all var(--dur) var(--ease-out);
+    }
+    
+    nav a:hover {
+      background: var(--bg-subtle);
+      color: var(--accent);
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--harbor-700) 100%);
+      color: white;
+      padding: var(--space-20) var(--space-6);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-12);
+      text-align: center;
+    }
+    
+    .hero h2 { font: var(--text-display); margin-bottom: var(--space-6); }
+    .hero p { font: var(--text-body-lg); max-width: 600px; margin: 0 auto; }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-12);
+    }
+    
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--dur) var(--ease-out);
+    }
+    
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    
+    .card h3 { color: var(--primary); margin-bottom: var(--space-4); font: var(--text-h3); }
+    .card p { color: var(--fg-muted); margin-bottom: var(--space-4); }
+    
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-4);
+      margin-bottom: var(--space-12);
+    }
+    
+    .color-swatch {
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      text-align: center;
+      font: var(--text-mono);
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      color: var(--fg-muted);
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    
+    .typography-sample {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+    
+    .typography-sample .label {
+      font: var(--text-caption);
+      color: var(--fg-subtle);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      margin-bottom: var(--space-2);
+    }
+    
+    .button {
+      display: inline-block;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      font: 600 1rem var(--font-sans);
+      transition: all var(--dur) var(--ease-out);
+      text-decoration: none;
+    }
+    
+    .button-primary {
+      background: var(--primary);
+      color: var(--primary-fg);
+    }
+    
+    .button-primary:hover {
+      background: var(--primary-hover);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .button-accent {
+      background: var(--accent);
+      color: var(--accent-fg);
+    }
+    
+    .button-accent:hover {
+      background: var(--accent-hover);
+      box-shadow: var(--shadow-md);
+    }
+    
+    section {
+      margin-bottom: var(--space-16);
+    }
+    
+    section h2 {
+      font: var(--text-h2);
+      color: var(--primary);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-4);
+      border-bottom: 2px solid var(--border);
+    }
+    
+    footer {
+      background: var(--primary);
+      color: var(--primary-fg);
+      padding: var(--space-12) var(--space-6);
+      text-align: center;
+      margin-top: var(--space-16);
+    }
+    
+    footer p { margin-bottom: var(--space-2); }
+    
+    .overflow-auto { overflow-x: auto; }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-6);
+    }
+    
+    th, td {
+      padding: var(--space-3) var(--space-4);
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    th {
+      background: var(--bg-subtle);
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    tr:hover { background: var(--ice-100); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐟 Cool & Ready</h1>
+    <p>Design System for B2B Seafood Supply Chain</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#guidelines">Guidelines</a></li>
+    </ul>
+  </nav>
+  
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Seafood that shows up cold, fresh, and ready to cook</h2>
+      <p>One unbroken cold chain — from the dock to your back door.</p>
+    </section>
+    
+    <!-- Overview Section -->
+    <section id="overview">
+      <h2>Overview</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Brand Promise</h3>
+          <p><strong>Cool</strong> — an unbroken cold chain with traceability and food-safety as table stakes.</p>
+          <p style="margin-top: var(--space-4);"><strong>Ready</strong> — product arrives prepped and operationally reliable.</p>
+        </div>
+        <div class="card">
+          <h3>Who We Serve</h3>
+          <p>Restaurants, grocery retailers, and food distributors who rely on consistent, fresh seafood delivery.</p>
+        </div>
+        <div class="card">
+          <h3>Design Approach</h3>
+          <p>Clean, cool, and confident. Modern cold-storage facility meets a good fishmonger's counter.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Colors Section -->
+    <section id="colors">
+      <h2>Color Palette</h2>
+      <div class="grid">
+        <div>
+          <h3 style="font: var(--text-h4); margin-bottom: var(--space-4);">Brand Colors</h3>
+          <div class="color-grid">
+            <div class="color-swatch" style="background: var(--harbor-900); color: white;">
+              Harbor 900<br>#052B38
+            </div>
+            <div class="color-swatch" style="background: var(--harbor-800); color: white;">
+              Harbor 800<br>#073F52
+            </div>
+            <div class="color-swatch" style="background: var(--harbor-700); color: white;">
+              Harbor 700<br>#0A5A72
+            </div>
+            <div class="color-swatch" style="background: var(--tide-500); color: white;">
+              Tide 500<br>#16A6C0
+            </div>
+            <div class="color-swatch" style="background: var(--tide-400); color: white;">
+              Tide 400<br>#46C2D4
+            </div>
+            <div class="color-swatch" style="background: var(--marine-500); color: white;">
+              Marine 500<br>#1C6FE6
+            </div>
+            <div class="color-swatch" style="background: var(--seafoam-300);">
+              Seafoam 300<br>#9FE3D8
+            </div>
+            <div class="color-swatch" style="background: var(--ice-50);">
+              Ice 50<br>#F2F8F9
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font: var(--text-h4); margin-bottom: var(--space-4);">Semantic Colors</h3>
+          <div class="color-grid">
+            <div class="color-swatch" style="background: var(--success); color: white;">
+              Success<br>#2E9E6B
+            </div>
+            <div class="color-swatch" style="background: var(--warning);">
+              Warning<br>#E8A33D
+            </div>
+            <div class="color-swatch" style="background: var(--danger); color: white;">
+              Danger<br>#D8412F
+            </div>
+            <div class="color-swatch" style="background: var(--ink-900); color: white;">
+              Text/Ink<br>#1A2226
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Typography Section -->
+    <section id="typography">
+      <h2>Typography</h2>
+      <div class="grid">
+        <div>
+          <h3 style="font: var(--text-h4); margin-bottom: var(--space-6);">Display (Space Grotesk)</h3>
+          <div class="typography-sample">
+            <div class="label">Headline 1</div>
+            <h1 class="cr-h1">Cold & Ready</h1>
+          </div>
+          <div class="typography-sample">
+            <div class="label">Headline 2</div>
+            <h2 class="cr-h2">Unbroken Cold Chain</h2>
+          </div>
+          <div class="typography-sample">
+            <div class="label">Headline 3</div>
+            <h3 class="cr-h3">Fresh & Ready</h3>
+          </div>
+        </div>
+        <div>
+          <h3 style="font: var(--text-h4); margin-bottom: var(--space-6);">Body (IBM Plex Sans)</h3>
+          <div class="typography-sample">
+            <div class="label">Body Large</div>
+            <p class="cr-body-lg">Every case is lot-tracked and temperature-logged for complete traceability.</p>
+          </div>
+          <div class="typography-sample">
+            <div class="label">Body Regular</div>
+            <p class="cr-body">We pack it cold. You get it ready.</p>
+          </div>
+          <div class="typography-sample">
+            <div class="label">Body Small</div>
+            <p class="cr-body-sm">Delivered within a 2-hour window at –1°C.</p>
+          </div>
+          <div class="typography-sample">
+            <div class="label">Mono (Data)</div>
+            <p class="cr-mono">SKU: AK-WILD-SAL-01 | LOT: 2024-06-02-442</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Components Section -->
+    <section id="components">
+      <h2>Components</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Buttons</h3>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <button class="button button-primary">Primary Action</button>
+            <button class="button button-accent">Accent CTA</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Cards</h3>
+          <p>Clean cards with soft shadows, 16px border radius, and hover elevation.</p>
+        </div>
+        <div class="card">
+          <h3>Spacing</h3>
+          <p><strong>Base grid:</strong> 4px</p>
+          <p><strong>Common:</strong> 8, 16, 24, 32, 48, 64, 96px</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Brand Guidelines Section -->
+    <section id="guidelines">
+      <h2>Brand Guidelines</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Voice & Tone</h3>
+          <p>Direct and reassuring. Short, declarative sentences. Lead with customer outcomes backed by proof.</p>
+          <p style="margin-top: var(--space-4); color: var(--primary);"><strong>Example:</strong> "One unbroken cold chain — from the dock to your back door."</p>
+        </div>
+        <div class="card">
+          <h3>Color Rule</h3>
+          <p>Harbor teal does the heavy lifting. Tide aqua for accents and links. Marine blue is sparse (~5% of surface).</p>
+        </div>
+        <div class="card">
+          <h3>Imagery</h3>
+          <p>Cool-leaning, fresh seafood and cold-chain photography. Crisp focus, natural light, slightly cool white balance.</p>
+        </div>
+        <div class="card">
+          <h3>Iconography</h3>
+          <p><strong>System:</strong> Lucide via CDN. Stroke style, 20–24px in UI, always paired with text labels.</p>
+        </div>
+        <div class="card">
+          <h3>Typography Scale</h3>
+          <p><strong>Display:</strong> Space Grotesk (headlines)</p>
+          <p><strong>Body:</strong> IBM Plex Sans (UI + text)</p>
+          <p><strong>Data:</strong> IBM Plex Mono (SKUs, lots, temps)</p>
+        </div>
+        <div class="card">
+          <h3>Surfaces</h3>
+          <p><strong>Default page:</strong> Ice-50 (#F2F8F9)</p>
+          <p><strong>Cards:</strong> White with 1px border</p>
+          <p><strong>Dark sections:</strong> Harbor-900</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Resources Section -->
+    <section>
+      <h2>Resources</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>📄 Documentation</h3>
+          <ul style="margin: var(--space-4) 0; padding-left: var(--space-6);">
+            <li><a href="Cool%20%26%20Ready%20Design%20System/README.md" style="color: var(--accent);">Full Brand Guidelines</a></li>
+            <li><a href="Cool%20%26%20Ready%20Design%20System/SKILL.md" style="color: var(--accent);">AI/Agent Integration</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>🎨 Design Tokens</h3>
+          <p><a href="Cool%20%26%20Ready%20Design%20System/colors_and_type.css" style="color: var(--accent);">colors_and_type.css</a></p>
+          <p style="margin-top: var(--space-4); font-size: 0.9rem; color: var(--fg-muted);">All colors, typography, spacing &amp; motion variables</p>
+        </div>
+        <div class="card">
+          <h3>🔗 External Links</h3>
+          <p><a href="https://lucide.dev" target="_blank" style="color: var(--accent);">Lucide Icons</a></p>
+          <p><a href="https://fonts.google.com" target="_blank" style="color: var(--accent);">Google Fonts</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p><strong>Cool & Ready Design System</strong></p>
+    <p>B2B Seafood Supply Chain • Brand, Design, and Component Library</p>
+    <p style="margin-top: var(--space-4); opacity: 0.8;">Cold chain reliability. Ready-to-use product.</p>
+  </footer>
+</body>
+</html>

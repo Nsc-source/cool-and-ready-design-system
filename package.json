@@ -1,0 +1,23 @@
+{
+  "name": "cool-and-ready-design-system",
+  "version": "1.0.0",
+  "description": "Brand & design system for Cool & Ready, a B2B seafood supply-chain company",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "design-system",
+    "ui-kit",
+    "brand",
+    "seafood",
+    "b2b"
+  ],
+  "author": "Cool & Ready",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nsc-source/cool-and-ready-design-system.git"
+  }
+}
