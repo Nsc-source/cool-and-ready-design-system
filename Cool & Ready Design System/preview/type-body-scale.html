@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .spec { font-family: var(--font-mono); font-size: 11px; color: var(--tide-500); font-weight: 600; margin-bottom: 6px; }
+  p { margin: 0; }
+  .overline { text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; font-size: 12px; }
+  .col > div { margin-bottom: 16px; }
+  .col > div:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+  <div class="col">
+    <div><div class="spec">body-lg · 19 / 1.6</div><p style="font-size:19px; line-height:1.6; color:var(--fg-muted)">We pack it cold and pick it fresh, so it lands in your kitchen ready to cook.</p></div>
+    <div><div class="spec">body · 16 / 1.6</div><p style="font-size:16px; line-height:1.6">Every case is lot-tracked and temperature-logged across the whole journey.</p></div>
+  </div>
+  <div class="col">
+    <div><div class="spec">body-sm · 14 / 1.55</div><p style="font-size:14px; line-height:1.55; color:var(--fg-muted)">Standing orders lock in your weekly volume and delivery window.</p></div>
+    <div><div class="spec">caption · 12 / 500</div><p style="font-size:12px; color:var(--fg-subtle); font-weight:500">Updated 4 minutes ago · 48 ports</p></div>
+    <div><div class="spec">overline · 12 / wide</div><p class="overline">Cold chain</p></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 22px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .item { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+  .bar { height: 8px; }
+  .body { padding: 10px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: var(--radius-pill); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .hex { font: var(--text-mono); font-size: 11px; color: var(--fg-subtle); margin-top: 8px; }
+</style>
+</head>
+<body>
+  <div class="grp">Semantic · Status</div>
+  <div class="grid">
+    <div class="item"><div class="bar" style="background:var(--success)"></div><div class="body"><span class="badge" style="background:var(--success-bg); color:var(--success)"><span class="dot" style="background:var(--success)"></span>Success</span><div class="hex">#2E9E6B · kelp</div></div></div>
+    <div class="item"><div class="bar" style="background:var(--warning)"></div><div class="body"><span class="badge" style="background:var(--warning-bg); color:#B97A1E"><span class="dot" style="background:var(--warning)"></span>Warning</span><div class="hex">#E8A33D · amber</div></div></div>
+    <div class="item"><div class="bar" style="background:var(--danger)"></div><div class="body"><span class="badge" style="background:var(--danger-bg); color:var(--danger)"><span class="dot" style="background:var(--danger)"></span>Danger</span><div class="hex">#D8412F · red</div></div></div>
+    <div class="item"><div class="bar" style="background:var(--info)"></div><div class="body"><span class="badge" style="background:var(--info-bg); color:var(--harbor-700)"><span class="dot" style="background:var(--info)"></span>Info</span><div class="hex">#1B97A8 · tide</div></div></div>
+  </div>
+</body>
+</html>

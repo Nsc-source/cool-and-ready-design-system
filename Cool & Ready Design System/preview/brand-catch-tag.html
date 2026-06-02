@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--ice-50); padding: 26px; display: flex; gap: 26px; align-items: center; }
+  .grp { position: absolute; top: 12px; left: 26px; font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; }
+
+  .tag { position: relative; width: 250px; border-radius: var(--radius-md); padding: 16px 18px 16px 22px;
+         clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px);
+         box-shadow: var(--shadow-md); }
+  .tag.light { background: #fff; border: 1px solid var(--border); color: var(--fg); }
+  .tag.dark { background: var(--harbor-800); color: #fff; }
+  .hole { position: absolute; top: 9px; left: 9px; width: 11px; height: 11px; border-radius: 50%;
+          border: 2px solid var(--tide-400); background: var(--ice-50); }
+  .tag.dark .hole { background: var(--harbor-900); }
+  .ov { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; color: var(--tide-500); }
+  .tag.dark .ov { color: var(--tide-300); }
+  .name { font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; margin: 5px 0 12px; }
+  .row { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px dashed; }
+  .light .row { border-color: var(--ice-200); }
+  .dark .row { border-color: rgba(255,255,255,0.16); }
+  .k { font-size: 12px; color: var(--fg-subtle); }
+  .dark .k { color: var(--fg-on-dark-muted); }
+  .v { font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
+  .light .v { color: var(--harbor-700); }
+  .dark .v { color: #fff; }
+  .temp { display: inline-flex; align-items: center; gap: 4px; color: var(--tide-500) !important; }
+  .dark .temp { color: var(--tide-300) !important; }
+  .verified { display: inline-flex; align-items: center; gap: 5px; margin-top: 11px; font-size: 11.5px; font-weight: 600; color: var(--success); }
+  .verified i { width: 14px; height: 14px; }
+</style>
+</head>
+<body>
+  <div class="grp">Brand device · Catch tag</div>
+
+  <div class="tag light">
+    <span class="hole"></span>
+    <div class="ov">Cool &amp; Ready</div>
+    <div class="name">Coho Salmon</div>
+    <div class="row"><span class="k">Lot</span><span class="v">LOT-49281-A</span></div>
+    <div class="row"><span class="k">Origin</span><span class="v">Port 17 · Sitka</span></div>
+    <div class="row"><span class="k">Hold</span><span class="v temp"><i data-lucide="snowflake"></i>−1.0°C</span></div>
+    <div class="verified"><i data-lucide="shield-check"></i>Cold chain verified</div>
+  </div>
+
+  <div class="tag dark">
+    <span class="hole"></span>
+    <div class="ov">Cool &amp; Ready</div>
+    <div class="name">U/10 Scallops</div>
+    <div class="row"><span class="k">Lot</span><span class="v">LOT-50114-C</span></div>
+    <div class="row"><span class="k">Origin</span><span class="v">Port 04 · New Bedford</span></div>
+    <div class="row"><span class="k">Hold</span><span class="v temp"><i data-lucide="snowflake"></i>0.0°C</span></div>
+    <div class="verified"><i data-lucide="shield-check"></i>Cold chain verified</div>
+  </div>
+
+  <div style="max-width:200px; font-size:13px; line-height:1.6; color:var(--fg-muted);">
+    The lot/temperature case-tag as a brand device — a notched, hole-punched shipping tag.
+    Use for provenance moments, hero proof-points and shipment cards.
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

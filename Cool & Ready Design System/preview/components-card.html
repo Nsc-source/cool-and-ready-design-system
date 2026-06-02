@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--ice-50); color: var(--fg); padding: 22px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 14px; }
+  .cards { display: flex; gap: 16px; }
+  .card { width: 218px; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .card.hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .img { height: 110px; background: linear-gradient(135deg, var(--tide-300), var(--harbor-600)); display: flex; align-items: center; justify-content: center; position: relative; }
+  .img span { color: rgba(255,255,255,.85); font-size: 11px; font-family: var(--font-mono); }
+  .badge { position: absolute; top: 10px; left: 10px; background: var(--marine-500); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: var(--radius-pill); }
+  .tag { position: absolute; top: 10px; right: 10px; background: rgba(6,54,63,.55); color:#fff; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: var(--radius-pill); display:flex; align-items:center; gap:4px; }
+  .tag i { width: 12px; height: 12px; }
+  .body { padding: 13px 14px 15px; }
+  .sku { font-family: var(--font-mono); font-size: 11px; color: var(--fg-subtle); }
+  .name { font-family: var(--font-display); font-weight: 600; font-size: 17px; margin: 3px 0 8px; }
+  .meta { display: flex; align-items: baseline; justify-content: space-between; }
+  .price { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--harbor-800); }
+  .price small { font-family: var(--font-sans); font-weight: 500; font-size: 12px; color: var(--fg-subtle); }
+  .cta { margin-top: 12px; width: 100%; border: 0; background: var(--harbor-800); color: #fff; font-family: var(--font-sans); font-weight: 600; font-size: 14px; padding: 9px; border-radius: var(--radius-md); cursor: pointer; display:flex; align-items:center; justify-content:center; gap:7px; }
+  .cta i { width: 16px; height: 16px; }
+</style>
+</head>
+<body>
+  <div class="grp">Product card</div>
+  <div class="cards">
+    <div class="card">
+      <div class="img"><span>image slot</span><span class="badge">New</span><span class="tag"><i data-lucide="waves"></i>Wild</span></div>
+      <div class="body">
+        <div class="sku">SR-COHO-2LB-FZ</div>
+        <div class="name">Coho Salmon Fillet</div>
+        <div class="meta"><div class="price">$14.20 <small>/ lb</small></div></div>
+        <button class="cta"><i data-lucide="plus"></i>Add to order</button>
+      </div>
+    </div>
+    <div class="card hover">
+      <div class="img" style="background:linear-gradient(135deg,#82DCE3,#0A47A8)"><span>image slot</span><span class="tag"><i data-lucide="snowflake"></i>−1°C</span></div>
+      <div class="body">
+        <div class="sku">SC-U10-DRY-FR</div>
+        <div class="name">U/10 Dry Scallops</div>
+        <div class="meta"><div class="price">$28.50 <small>/ lb</small></div></div>
+        <button class="cta"><i data-lucide="plus"></i>Add to order</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

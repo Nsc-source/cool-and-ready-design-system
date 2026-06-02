@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 24px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 16px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 4px 11px; border-radius: var(--radius-pill); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .tag { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: var(--radius-pill); background: var(--ice-100); color: var(--harbor-700); border: 1px solid var(--ice-200); }
+  .tag i { width: 14px; height: 14px; }
+  .lab { font-size: 11px; color: var(--fg-subtle); width: 100%; }
+</style>
+</head>
+<body>
+  <div class="grp">Badges &amp; tags</div>
+  <div class="row">
+    <span class="badge" style="background:var(--success-bg); color:var(--success)"><span class="dot" style="background:var(--success)"></span>Delivered</span>
+    <span class="badge" style="background:var(--info-bg); color:var(--harbor-700)"><span class="dot" style="background:var(--info)"></span>In transit</span>
+    <span class="badge" style="background:var(--warning-bg); color:#B97A1E"><span class="dot" style="background:var(--warning)"></span>Window soon</span>
+    <span class="badge" style="background:var(--danger-bg); color:var(--danger)"><span class="dot" style="background:var(--danger)"></span>Temp alert</span>
+    <span class="badge" style="background:var(--marine-100); color:var(--marine-600)">New</span>
+  </div>
+  <div class="row">
+    <span class="tag"><i data-lucide="snowflake"></i>Cold chain</span>
+    <span class="tag"><i data-lucide="waves"></i>Wild-caught</span>
+    <span class="tag"><i data-lucide="leaf"></i>Farm-raised</span>
+    <span class="tag"><i data-lucide="flame"></i>Ready-to-cook</span>
+    <span class="lab">Status badges use semantic color + dot · category tags use Ice tint + Lucide icon</span>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

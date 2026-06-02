@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 24px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 16px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--fg); }
+  .field { position: relative; }
+  input { width: 100%; box-sizing: border-box; font-family: var(--font-sans); font-size: 15px; padding: 11px 12px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--paper); color: var(--fg); }
+  input:focus { outline: 2px solid var(--ring); outline-offset: 2px; border-color: var(--tide-400); }
+  input::placeholder { color: var(--ink-400); }
+  .focused { outline: 2px solid var(--ring); outline-offset: 2px; border-color: var(--tide-400); }
+  .err { border-color: var(--danger); }
+  .hint { font-size: 12px; color: var(--fg-subtle); margin-top: 6px; }
+  .hint.bad { color: var(--danger); }
+  .with-icon i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--ink-400); }
+  .with-icon input { padding-left: 38px; }
+</style>
+</head>
+<body>
+  <div class="grp">Form inputs</div>
+  <div class="grid">
+    <div><label>Business email</label><div class="field"><input value="orders@blueplate.co"></div><div class="hint">Default</div></div>
+    <div><label>Search catalog</label><div class="field with-icon"><i data-lucide="search"></i><input placeholder="Salmon, scallops, SKU…" class="focused"></div><div class="hint">Focused · Tide ring</div></div>
+    <div><label>Delivery ZIP</label><div class="field"><input value="0210" class="err"></div><div class="hint bad">Enter a valid 5-digit ZIP</div></div>
+    <div><label>Case quantity</label><div class="field with-icon"><i data-lucide="package"></i><input value="12 cases"></div><div class="hint">With leading icon</div></div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

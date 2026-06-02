@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 24px; }
+  .fam { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .fam:last-child { border-bottom: 0; }
+  .tag { font: var(--text-mono); font-size: 12px; color: var(--tide-500); font-weight: 600; }
+  .tag span { display: block; color: var(--fg-subtle); font-weight: 400; margin-top: 4px; }
+  .specimen { line-height: 1; }
+  .big { font-family: var(--font-display); font-weight: 700; font-size: 40px; letter-spacing: -0.02em; }
+  .mid { font-family: var(--font-sans); font-weight: 500; font-size: 30px; }
+  .mono { font-family: var(--font-mono); font-weight: 500; font-size: 26px; }
+  .sub { font-size: 13px; color: var(--fg-subtle); margin-top: 8px; font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+  <div class="fam">
+    <div class="tag">Display<span>Space Grotesk</span></div>
+    <div><div class="specimen big">Cold chain, ready</div><div class="sub">Headlines · hero · wordmark · big numbers — 600 / 700</div></div>
+  </div>
+  <div class="fam">
+    <div class="tag">Body<span>IBM Plex Sans</span></div>
+    <div><div class="specimen mid">Fresh from dock to door</div><div class="sub">Running text · UI labels · paragraphs — 400 / 500 / 600</div></div>
+  </div>
+  <div class="fam">
+    <div class="tag">Mono<span>IBM Plex Mono</span></div>
+    <div><div class="specimen mono">LOT-49281 · −1°C</div><div class="sub">Data — SKUs · lot numbers · temps · order IDs — 400 / 500</div></div>
+  </div>
+</body>
+</html>

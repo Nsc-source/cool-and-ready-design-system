@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--ice-50); color: var(--fg); padding: 30px 24px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 22px; }
+  .row { display: flex; gap: 26px; }
+  .item { text-align: center; }
+  .box { width: 90px; height: 66px; background: var(--paper); border-radius: var(--radius-lg); border: 1px solid var(--border); }
+  .tok { font-family: var(--font-mono); font-size: 12px; margin-top: 14px; }
+  .use { font-size: 11px; color: var(--fg-subtle); margin-top: 2px; }
+</style>
+</head>
+<body>
+  <div class="grp">Elevation · cool-tinted shadows</div>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-xs)"></div><div class="tok">xs</div><div class="use">chips</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-sm)"></div><div class="tok">sm</div><div class="use">cards</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-md)"></div><div class="tok">md</div><div class="use">hover/raised</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-lg)"></div><div class="tok">lg</div><div class="use">menus</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-xl)"></div><div class="tok">xl</div><div class="use">modals</div></div>
+  </div>
+</body>
+</html>

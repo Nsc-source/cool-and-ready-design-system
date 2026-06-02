@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 22px; }
+  .row { display: flex; gap: 12px; }
+  .sw { flex: 1; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }
+  .chip { height: 76px; }
+  .meta { padding: 8px 10px; }
+  .name { font-weight: 600; font-size: 13px; }
+  .hex { font: var(--text-mono); font-size: 12px; color: var(--fg-subtle); margin-top: 2px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 12px; }
+</style>
+</head>
+<body>
+  <div class="grp">Brand · Ocean palette</div>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--harbor-900)"></div><div class="meta"><div class="name">Harbor 900</div><div class="hex">#052B38</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--harbor-800)"></div><div class="meta"><div class="name">Harbor 800 ·primary</div><div class="hex">#073F52</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--harbor-600)"></div><div class="meta"><div class="name">Harbor 600</div><div class="hex">#0E7693</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--tide-500)"></div><div class="meta"><div class="name">Tide 500 ·aqua</div><div class="hex">#16A6C0</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--seafoam-300)"></div><div class="meta"><div class="name">Seafoam 300</div><div class="hex">#9FE3D8</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--ice-100); border-bottom:1px solid var(--border)"></div><div class="meta"><div class="name">Ice 100</div><div class="hex">#E5F0F2</div></div></div>
+  </div>
+</body>
+</html>

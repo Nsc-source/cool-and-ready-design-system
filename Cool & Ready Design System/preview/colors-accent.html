@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 22px; }
+  .row { display: flex; gap: 12px; }
+  .sw { flex: 1; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }
+  .chip { height: 76px; }
+  .meta { padding: 8px 10px; }
+  .name { font-weight: 600; font-size: 13px; }
+  .hex { font: var(--text-mono); font-size: 12px; color: var(--fg-subtle); margin-top: 2px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--marine-600); font-weight: 600; margin: 0 0 12px; }
+  .note { font-size: 12px; color: var(--fg-subtle); margin-top: 14px; }
+</style>
+</head>
+<body>
+  <div class="grp">Accent · Marine Blue</div>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--marine-700)"></div><div class="meta"><div class="name">Marine 700</div><div class="hex">#0A47A8</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--marine-600)"></div><div class="meta"><div class="name">Marine 600 ·hover</div><div class="hex">#0E57C9</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--marine-500)"></div><div class="meta"><div class="name">Marine 500 ·accent</div><div class="hex">#1C6FE6</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--marine-300)"></div><div class="meta"><div class="name">Marine 300</div><div class="hex">#8DB8F2</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--marine-100); border-bottom:1px solid var(--border)"></div><div class="meta"><div class="name">Marine 100 ·tint</div><div class="hex">#E4EDFC</div></div></div>
+  </div>
+  <div class="note">The accent blue — reserved for the highest-priority CTA and emphasis. ~5% of any surface; teal still does the heavy lifting, never a full background wash.</div>
+</body>
+</html>

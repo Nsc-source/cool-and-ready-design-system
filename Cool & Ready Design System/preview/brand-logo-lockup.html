@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); padding: 0; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; min-height: 200px; }
+  .pane { display: flex; align-items: center; justify-content: center; padding: 28px; }
+  .light { background: var(--ice-50); }
+  .dark { background: var(--harbor-900); }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup img { height: 52px; width: auto; display: block; }
+  .word { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .word .top { font-size: 26px; }
+  .word .sub { display:block; font-family: var(--font-sans); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 4px; }
+  .light .word .top { color: var(--harbor-800); }
+  .light .word .sub { color: var(--tide-500); }
+  .dark .word .top { color: #fff; }
+  .dark .word .sub { color: var(--tide-300); }
+</style>
+</head>
+<body>
+  <div class="split">
+    <div class="pane light">
+      <div class="lockup">
+        <img src="../assets/logo-mark-harbor.png" alt="Cool &amp; Ready mark">
+        <div class="word"><span class="top">Cool &amp; Ready</span><span class="sub">Seafood supply</span></div>
+      </div>
+    </div>
+    <div class="pane dark">
+      <div class="lockup">
+        <img src="../assets/logo-mark-white.png" alt="Cool &amp; Ready mark">
+        <div class="word"><span class="top">Cool &amp; Ready</span><span class="sub">Seafood supply</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

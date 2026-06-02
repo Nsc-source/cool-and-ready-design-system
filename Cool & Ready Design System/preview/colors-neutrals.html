@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 22px; }
+  .scale { display: flex; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }
+  .step { flex: 1; height: 64px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; font: var(--text-mono); font-size: 10px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 12px; }
+  .labels { display: flex; margin-top: 6px; }
+  .lab { flex: 1; text-align: center; font-size: 11px; color: var(--fg-subtle); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+  <div class="grp">Neutrals · Ink (cool-tinted gray)</div>
+  <div class="scale">
+    <div class="step" style="background:var(--ink-900); color:#fff">900</div>
+    <div class="step" style="background:var(--ink-700); color:#fff">700</div>
+    <div class="step" style="background:var(--ink-600); color:#fff">600</div>
+    <div class="step" style="background:var(--ink-500); color:#fff">500</div>
+    <div class="step" style="background:var(--ink-400); color:#fff">400</div>
+    <div class="step" style="background:var(--ink-300)">300</div>
+    <div class="step" style="background:var(--ink-200)">200</div>
+    <div class="step" style="background:var(--ink-100)">100</div>
+    <div class="step" style="background:var(--paper); border-left:1px solid var(--border)">paper</div>
+  </div>
+  <div class="labels">
+    <div class="lab">1A2226</div><div class="lab">38454B</div><div class="lab">4E5D64</div><div class="lab">6B7A81</div><div class="lab">93A0A6</div><div class="lab">BCC7CB</div><div class="lab">DCE4E6</div><div class="lab">EDF2F3</div><div class="lab">FFFFFF</div>
+  </div>
+</body>
+</html>

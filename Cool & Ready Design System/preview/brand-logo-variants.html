@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--fg); padding: 22px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 16px; }
+  .row { display: flex; gap: 16px; align-items: stretch; }
+  .tile { flex: 1; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .tile img { height: 56px; width: auto; }
+  .cap { font-size: 11px; color: var(--fg-subtle); font-family: var(--font-mono); }
+  .onlight { background: var(--ice-50); }
+  .ontide { background: var(--tide-500); }
+  .onharbor { background: var(--harbor-900); }
+  .onharbor .cap, .ontide .cap { color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+  <div class="grp">Mark · on backgrounds</div>
+  <div class="row">
+    <div class="tile onlight"><img src="../assets/logo-mark.png" alt="charcoal mark"><div class="cap">logo-mark.png</div></div>
+    <div class="tile onlight"><img src="../assets/logo-mark-harbor.png" alt="harbor mark"><div class="cap">logo-mark-harbor.png</div></div>
+    <div class="tile ontide"><img src="../assets/logo-mark-white.png" alt="white mark"><div class="cap">logo-mark-white.png</div></div>
+    <div class="tile onharbor"><img src="../assets/logo-mark-white.png" alt="white mark"><div class="cap">logo-mark-white.png</div></div>
+  </div>
+</body>
+</html>

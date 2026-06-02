@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--ice-50); color: var(--fg); padding: 24px; }
+  .grp { font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-overline); color: var(--tide-500); font-weight: 600; margin: 0 0 14px; }
+  .rows { display: grid; gap: 10px; }
+  .r { display: flex; align-items: center; gap: 14px; }
+  .lbl { font-family: var(--font-sans); font-size: 12px; color: var(--tide-500); width: 92px; flex: none; }
+  .val { font-family: var(--font-mono); font-size: 15px; font-weight: 500; color: var(--harbor-600); background: #fff; border: 1px solid var(--tide-200); border-radius: var(--radius-sm); padding: 4px 10px; }
+  .temp { color: var(--tide-500); background: var(--info-bg); border-color: var(--tide-300); }
+</style>
+</head>
+<body>
+  <div class="grp">Mono in use · data &amp; codes</div>
+  <div class="rows">
+    <div class="r"><div class="lbl">SKU</div><div class="val">SR-COHO-2LB-FZ</div></div>
+    <div class="r"><div class="lbl">Lot</div><div class="val">LOT-49281-A</div></div>
+    <div class="r"><div class="lbl">Order ID</div><div class="val">#CR-100482</div></div>
+    <div class="r"><div class="lbl">Hold temp</div><div class="val temp">−1.0 °C</div></div>
+    <div class="r"><div class="lbl">Tracking</div><div class="val">CRX 7741 9930 02</div></div>
+  </div>
+</body>
+</html>
