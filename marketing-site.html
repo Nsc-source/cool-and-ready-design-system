@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool & Ready — B2B Seafood Supply</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.css" rel="stylesheet">
+  <style>
+    /* ============================================================
+       COOL & READY — Core Design Tokens (Embedded)
+       ============================================================ */
+    :root {
+      /* BRAND: Harbor (deep ocean navy-teal) */
+      --harbor-900: #052B38;
+      --harbor-800: #073F52;
+      --harbor-700: #0A5A72;
+      --harbor-600: #0E7693;
+
+      /* BRAND: Tide (bright ocean aqua) */
+      --tide-500: #16A6C0;
+      --tide-400: #46C2D4;
+      --tide-300: #82DCE3;
+      --tide-200: #B8ECEE;
+
+      /* BRAND: Seafoam (light sea-mint) */
+      --seafoam-300: #9FE3D8;
+      --seafoam-200: #C9F0E9;
+      --seafoam-100: #E4F7F3;
+
+      /* BRAND: Ice (cool sea tints) */
+      --ice-50:  #F2F8F9;
+      --ice-100: #E5F0F2;
+      --ice-200: #D0E5E8;
+
+      /* ACCENT: Marine (vivid ocean blue, CTA + emphasis) */
+      --marine-700: #0A47A8;
+      --marine-600: #0E57C9;
+      --marine-500: #1C6FE6;
+      --marine-300: #8DB8F2;
+      --marine-100: #E4EDFC;
+
+      /* INK / NEUTRALS (cool-tinted grays) */
+      --ink-900: #1A2226;
+      --ink-800: #232E33;
+      --ink-700: #38454B;
+      --ink-600: #4E5D64;
+      --ink-500: #6B7A81;
+      --ink-400: #93A0A6;
+      --ink-300: #BCC7CB;
+      --ink-200: #DCE4E6;
+      --ink-100: #EDF2F3;
+      --paper:   #FFFFFF;
+      --paper-warm: #FBFCFC;
+
+      /* SEMANTIC STATUS */
+      --success: #2E9E6B;
+      --success-bg: #E4F4EC;
+      --warning: #E8A33D;
+      --warning-bg: #FBF0DD;
+      --danger:  #D8412F;
+      --danger-bg: #FBE5E2;
+      --info: var(--tide-500);
+      --info-bg: #E2F1F4;
+
+      /* SEMANTIC APPLICATION TOKENS */
+      --bg:            var(--ice-50);
+      --bg-subtle:     var(--ice-100);
+      --surface:       var(--paper);
+      --surface-raised:var(--paper);
+      --surface-inverse: var(--harbor-900);
+
+      --fg:        var(--ink-900);
+      --fg-muted:  var(--ink-600);
+      --fg-subtle: var(--ink-400);
+      --fg-on-dark: var(--ice-50);
+      --fg-on-dark-muted: #9FB7BC;
+
+      --border:        var(--ink-200);
+      --border-strong: var(--ink-300);
+      --border-on-dark: rgba(255,255,255,0.14);
+
+      --primary:    var(--harbor-800);
+      --primary-fg: #FFFFFF;
+      --primary-hover: var(--harbor-700);
+      --primary-active: var(--harbor-900);
+
+      --accent:     var(--marine-500);
+      --accent-fg:  #FFFFFF;
+      --accent-hover: var(--marine-600);
+
+      --ring: var(--tide-400);
+
+      /* TYPEFACES */
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-sans:    'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
+
+      /* TYPE SCALE */
+      --text-display: 700 4.25rem/1.02 var(--font-display);
+      --text-h1: 700 3rem/1.06 var(--font-display);
+      --text-h2: 600 2.125rem/1.12 var(--font-display);
+      --text-h3: 600 1.5rem/1.2 var(--font-display);
+      --text-h4: 600 1.1875rem/1.3 var(--font-display);
+      --text-body-lg: 400 1.1875rem/1.6 var(--font-sans);
+      --text-body: 400 1rem/1.6 var(--font-sans);
+      --text-body-sm: 400 0.875rem/1.55 var(--font-sans);
+      --text-caption: 500 0.75rem/1.4 var(--font-sans);
+      --text-mono: 500 0.875rem/1.5 var(--font-mono);
+
+      /* SPACING (4px base) */
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      --space-24: 96px;
+
+      /* RADII */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-pill: 999px;
+
+      /* SHADOWS */
+      --shadow-xs: 0 1px 2px rgba(7, 63, 82, 0.06);
+      --shadow-sm: 0 1px 3px rgba(7, 63, 82, 0.08), 0 1px 2px rgba(7, 63, 82, 0.04);
+      --shadow-md: 0 4px 12px rgba(7, 63, 82, 0.10), 0 2px 4px rgba(7, 63, 82, 0.05);
+      --shadow-lg: 0 12px 28px rgba(7, 63, 82, 0.14), 0 4px 8px rgba(7, 63, 82, 0.06);
+      --shadow-xl: 0 24px 48px rgba(5, 43, 56, 0.18);
+
+      /* MOTION */
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur: 200ms;
+      --dur-slow: 360ms;
+    }
+
+    /* ============================================================
+       PAGE STYLES
+       ============================================================ */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html, body {
+      background: var(--paper);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+    }
+    
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 32px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; font-family: inherit; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       HEADER / NAV
+       ============================================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+      cursor: pointer;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .logo-text > span:first-child {
+      font-size: 18px;
+      color: var(--harbor-800);
+      line-height: 1.05;
+    }
+
+    .logo-text > span:last-child {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tide-500);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink-700);
+      transition: color var(--dur);
+    }
+
+    nav a:hover {
+      color: var(--tide-500);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* ============================================================
+       BUTTONS
+       ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      transition: all var(--dur) var(--ease-out);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-fg);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--paper);
+      color: var(--harbor-800);
+      border: 1px solid var(--border-strong);
+    }
+
+    .btn-secondary:hover {
+      background: var(--ice-50);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--harbor-800);
+    }
+
+    .btn-ghost:hover {
+      background: var(--ice-100);
+    }
+
+    .btn-lg {
+      padding: 14px 24px;
+      font-size: 16px;
+    }
+
+    .btn-sm {
+      padding: 8px 13px;
+      font-size: 13px;
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      background: var(--ice-50);
+      padding: var(--space-20) 32px;
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font: var(--text-h1);
+      font-size: 58px;
+      letter-spacing: -0.025em;
+      color: var(--fg);
+      margin: 18px 0 0;
+      max-width: 480px;
+    }
+
+    .hero p {
+      font: var(--text-body-lg);
+      color: var(--fg-muted);
+      margin: 22px 0 0;
+      max-width: 480px;
+    }
+
+    .hero .stats {
+      display: flex;
+      gap: 26px;
+      margin-top: 38px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--harbor-800);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--fg-subtle);
+      margin-top: 2px;
+    }
+
+    .hero-image {
+      position: relative;
+      height: 460px;
+      background: linear-gradient(135deg, var(--tide-300), var(--harbor-600));
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.8);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 22px;
+      left: -26px;
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--success-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--success);
+      flex-shrink: 0;
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .badge-code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--harbor-800);
+    }
+
+    .badge-note {
+      font-size: 12px;
+      color: var(--fg-subtle);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    /* ============================================================
+       OVERLINE
+       ============================================================ */
+    .overline {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--tide-500);
+    }
+
+    .overline.on-dark {
+      color: var(--tide-300);
+    }
+
+    /* ============================================================
+       SECTIONS
+       ============================================================ */
+    section {
+      padding: 88px 0;
+    }
+
+    section.trust {
+      background: var(--paper);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 26px 0;
+    }
+
+    section.trust .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .trust-label {
+      font-size: 13px;
+      color: var(--fg-subtle);
+      white-space: nowrap;
+    }
+
+    .trust-logos {
+      display: flex;
+      gap: 34px;
+      flex-wrap: wrap;
+    }
+
+    .trust-logo {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ink-400);
+      letter-spacing: 0.02em;
+    }
+
+    /* ============================================================
+       VALUE PROPS
+       ============================================================ */
+    section.value-props {
+      background: var(--ice-50);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 44px;
+    }
+
+    .value-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .value-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-md);
+      background: var(--info-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--harbor-700);
+      margin-bottom: 18px;
+    }
+
+    .value-card h3 {
+      font: var(--text-h4);
+      margin: 0 0 8px;
+      color: var(--fg);
+    }
+
+    .value-card p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--fg-muted);
+      margin: 0;
+    }
+
+    /* ============================================================
+       CATEGORIES
+       ============================================================ */
+    section.categories {
+      background: var(--paper);
+    }
+
+    .categories-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .categories-header h2 {
+      font: var(--text-h2);
+      letter-spacing: -0.02em;
+      margin: 14px 0 0;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .cat-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--dur) var(--ease-out);
+    }
+
+    .cat-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .cat-image {
+      height: 188px;
+      background: linear-gradient(150deg, var(--tide-300), var(--harbor-600));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.8);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      position: relative;
+    }
+
+    .cat-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(5,43,56,0.55);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: var(--radius-pill);
+    }
+
+    .cat-content {
+      padding: 18px 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .cat-text h3 {
+      font: var(--text-h3);
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .cat-text p {
+      font-size: 14px;
+      color: var(--fg-muted);
+      margin: 4px 0 0;
+    }
+
+    /* ============================================================
+       DARK SECTION (COLD CHAIN)
+       ============================================================ */
+    section.dark {
+      background: var(--harbor-900);
+      color: var(--fg-on-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section.dark h2 {
+      font: var(--text-h2);
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 14px 0 16px;
+    }
+
+    section.dark p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--fg-on-dark-muted);
+      max-width: 420px;
+      margin: 0;
+    }
+
+    .dark .container {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(3px);
+      border: 1px solid var(--border-on-dark);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--fg-on-dark-muted);
+    }
+
+    .step-card h3 {
+      font: var(--text-h4);
+      color: #fff;
+      margin: 0 0 6px;
+    }
+
+    .step-card p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ============================================================
+       TESTIMONIAL
+       ============================================================ */
+    section.testimonial {
+      background: var(--ice-50);
+    }
+
+    section.testimonial .container {
+      max-width: 880px;
+      text-align: center;
+    }
+
+    .testimonial-quote {
+      font: var(--text-h3);
+      font-size: 30px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin: 20px auto 28px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--seafoam-300), var(--harbor-600));
+    }
+
+    .author-info {
+      text-align: left;
+    }
+
+    .author-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .author-title {
+      font-size: 13px;
+      color: var(--fg-subtle);
+    }
+
+    /* ============================================================
+       CTA SECTION
+       ============================================================ */
+    section.cta {
+      background: var(--paper);
+    }
+
+    .cta-band {
+      background: linear-gradient(120deg, var(--harbor-800), var(--harbor-600));
+      border-radius: var(--radius-xl);
+      padding: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .cta-text h2 {
+      font: var(--text-h2);
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .cta-text p {
+      font-size: 16.5px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 14px;
+      margin-bottom: 0;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+      background: var(--harbor-900);
+      color: var(--fg-on-dark);
+      padding-top: 64px;
+      padding-bottom: 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-on-dark);
+      margin-bottom: 24px;
+    }
+
+    .footer-col h3 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--tide-300);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      display: grid;
+      gap: 11px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      color: var(--fg-on-dark-muted);
+      cursor: pointer;
+      transition: color var(--dur);
+    }
+
+    .footer-col a:hover {
+      color: var(--tide-300);
+    }
+
+    .footer-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--fg-on-dark-muted);
+      margin-top: 18px;
+      max-width: 260px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--fg-on-dark-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    .footer-links a {
+      color: var(--fg-on-dark-muted);
+      cursor: pointer;
+      transition: color var(--dur);
+    }
+
+    .footer-links a:hover {
+      color: var(--tide-300);
+    }
+
+    /* ============================================================
+       TOAST
+       ============================================================ */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: -80px;
+      transform: translateX(-50%);
+      transition: bottom var(--dur-slow) var(--ease-out);
+      background: var(--harbor-900);
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      bottom: 30px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      header .container {
+        height: auto;
+        padding: 12px 16px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dark .container {
+        grid-template-columns: 1fr;
+      }
+
+      .step-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-band {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+
+      .cta-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <span style="font-size: 32px;">🐟</span>
+        <div class="logo-text">
+          <span>Cool &amp; Ready</span>
+          <span>Seafood Supply</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#coldchain">Cold chain</a>
+        <a href="#sourcing">Sourcing</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm">Sign in</button>
+        <button class="btn btn-primary btn-sm" onclick="showToast()">Become a customer</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="overline">Cold chain · ready to cook</div>
+        <h1>Seafood that shows up cold, fresh, and ready to cook.</h1>
+        <p>One unbroken cold chain — from the dock to your back door. Lot-tracked, temperature-logged, and delivered in a window you can plan a service around.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-lg" onclick="showToast()">
+            🛒 Become a customer
+          </button>
+          <button class="btn btn-secondary btn-lg">
+            View the catalog →
+          </button>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-number">48</div>
+            <div class="stat-label">ports sourced</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2-hr</div>
+            <div class="stat-label">delivery window</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">−1°C</div>
+            <div class="stat-label">held end-to-end</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="position: relative;">
+          <div class="hero-image">
+            hero — fresh catch on ice
+          </div>
+          <div class="hero-badge">
+            <div class="badge-icon">✓</div>
+            <div class="badge-text">
+              <div class="badge-code">LOT-49281-A · −1.0°C</div>
+              <div class="badge-note">Temperature verified · 4 min ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust">
+    <div class="container">
+      <span class="trust-label">Trusted by kitchens &amp; buyers</span>
+      <div class="trust-logos">
+        <span class="trust-logo">BLUE PLATE CO.</span>
+        <span class="trust-logo">HARBORHOUSE</span>
+        <span class="trust-logo">THE GREY MULLET</span>
+        <span class="trust-logo">COASTAL MARKETS</span>
+        <span class="trust-logo">NORI + SALT</span>
+        <span class="trust-logo">PIER 9 GROUP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="value-props" id="products">
+    <div class="container">
+      <div>
+        <div class="overline">Why Cool &amp; Ready</div>
+        <h2 style="font: var(--text-h2); letter-spacing: -0.02em; margin: 14px 0 0;">Supply you can build a menu on.</h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-icon">❄️</div>
+          <h3>Unbroken cold chain</h3>
+          <p>Held at −1°C from dock to door, with a temperature log attached to every case you receive.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🛣️</div>
+          <h3>Delivery you can plan around</h3>
+          <p>Standing orders lock in your weekly volume and a 2-hour window — no guessing, no gaps.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✓</div>
+          <h3>Traceable to the lot</h3>
+          <p>Every case carries a lot number tied to vessel, port, and landing date. HACCP throughout.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔥</div>
+          <h3>Ready to cook</h3>
+          <p>Portioned, scaled, and prepped to spec, so it lands in your kitchen ready for the pass.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="container">
+      <div class="categories-header">
+        <div>
+          <div class="overline">The catalog</div>
+          <h2>Browse by what you're cooking.</h2>
+        </div>
+        <button class="btn btn-ghost">See all products →</button>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card" onclick="showToast()">
+          <div class="cat-image">
+            <span class="cat-tag">Wild &amp; farmed</span>
+            finfish photo
+          </div>
+          <div class="cat-content">
+            <div class="cat-text">
+              <h3>Finfish</h3>
+              <p>Salmon, cod, halibut, branzino</p>
+            </div>
+            <span style="font-size: 22px; color: var(--ink-300);">↗</span>
+          </div>
+        </div>
+        <div class="cat-card" onclick="showToast()">
+          <div class="cat-image" style="background: linear-gradient(150deg, #8DB8F2, #0A47A8);">
+            <span class="cat-tag">Dry-packed</span>
+            shellfish photo
+          </div>
+          <div class="cat-content">
+            <div class="cat-text">
+              <h3>Shellfish</h3>
+              <p>Scallops, shrimp, oysters, crab</p>
+            </div>
+            <span style="font-size: 22px; color: var(--ink-300);">↗</span>
+          </div>
+        </div>
+        <div class="cat-card" onclick="showToast()">
+          <div class="cat-image" style="background: linear-gradient(150deg, #9FE3D8, #0E7693);">
+            <span class="cat-tag">Kitchen-ready</span>
+            ready-to-cook photo
+          </div>
+          <div class="cat-content">
+            <div class="cat-text">
+              <h3>Ready-to-cook</h3>
+              <p>Portioned, marinated, breaded</p>
+            </div>
+            <span style="font-size: 22px; color: var(--ink-300);">↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLD CHAIN SECTION -->
+  <section class="dark" id="coldchain">
+    <div class="container">
+      <div>
+        <div class="overline on-dark">The cold chain</div>
+        <h2>Cold the whole way, or it doesn't ship.</h2>
+        <p>Temperature is logged at every handoff and travels with the case. If the chain breaks, the product doesn't reach your kitchen — that's the whole promise.</p>
+        <button class="btn btn-primary btn-lg" style="margin-top: 28px;">How it works →</button>
+      </div>
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="step-header">
+            <span style="font-size: 26px; color: var(--tide-300);">⚓</span>
+            <div class="step-number">01</div>
+          </div>
+          <h3>Landed</h3>
+          <p>Iced at the dock within hours of the catch.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-header">
+            <span style="font-size: 26px; color: var(--tide-300);">🌡️</span>
+            <div class="step-number">02</div>
+          </div>
+          <h3>Held</h3>
+          <p>Blast-chilled and stored at −1°C.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-header">
+            <span style="font-size: 26px; color: var(--tide-300);">🚚</span>
+            <div class="step-number">03</div>
+          </div>
+          <h3>Moved</h3>
+          <p>Refrigerated transport, logged the whole way.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-header">
+            <span style="font-size: 26px; color: var(--tide-300);">🚪</span>
+            <div class="step-number">04</div>
+          </div>
+          <h3>Delivered</h3>
+          <p>Handed off cold, inside your window.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="container">
+      <div style="font-size: 40px; margin-bottom: 20px;">❝</div>
+      <p class="testimonial-quote">"We pulled three suppliers down to one. The product is consistent, it's cold when it lands, and the window actually holds. That changed how we run prep."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <div class="author-info">
+          <div class="author-name">Marco Reyes</div>
+          <div class="author-title">Executive Chef · Blue Plate Co.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-band">
+        <div class="cta-text">
+          <h2>Ready to set up your account?</h2>
+          <p>Tell us what you cook and where you are. We'll confirm delivery areas and get your first order moving.</p>
+        </div>
+        <div class="cta-buttons">
+          <button class="btn btn-accent btn-lg" onclick="showToast()">🛒 Become a customer</button>
+          <button class="btn btn-primary btn-lg" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);">Talk to sales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom: 0;">
+            <span style="font-size: 36px; filter: brightness(0) invert(1);">🐟</span>
+            <div class="logo-text" style="gap: 2px;">
+              <span style="color: #fff; font-size: 16px;">Cool &amp; Ready</span>
+              <span style="font-size: 8px; color: var(--tide-300);">Seafood Supply</span>
+            </div>
+          </div>
+          <p class="footer-desc">One unbroken cold chain — from the dock to your back door. Seafood that shows up cold, fresh, and ready to cook.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a>Finfish</a></li>
+            <li><a>Shellfish</a></li>
+            <li><a>Ready-to-cook</a></li>
+            <li><a>Frozen program</a></li>
+            <li><a>Seasonal catch</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a>About us</a></li>
+            <li><a>Sourcing</a></li>
+            <li><a>Cold chain</a></li>
+            <li><a>Careers</a></li>
+            <li><a>Newsroom</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>For buyers</h3>
+          <ul>
+            <li><a>Become a customer</a></li>
+            <li><a>Order portal</a></li>
+            <li><a>Delivery areas</a></li>
+            <li><a>Pricing</a></li>
+            <li><a>Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cool &amp; Ready Seafood Supply. All rights reserved.</span>
+        <div class="footer-links">
+          <a>Privacy</a>
+          <a>Terms</a>
+          <a>HACCP &amp; food safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    ✓ Thanks — a rep will reach out to set up your account.
+  </div>
+
+  <script>
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+  </script>
+</body>
+</html>
